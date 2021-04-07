@@ -37,7 +37,9 @@ Reimport the Northwind database into PostgreSQL using pgAdmin. This is the same 
   </details>
 
 ```SQL
-
+Select customer_id, contact_name
+From customers
+where city = 'London'
 ```
 
 * [ ] ***find all customers with postal code 1010. Returns 3 customers***
@@ -48,7 +50,9 @@ Reimport the Northwind database into PostgreSQL using pgAdmin. This is the same 
   </details>
 
 ```SQL
-
+Select contact_name
+FROM customers
+Where postal_code = '1010'
 ```
 
 * [ ] ***find the phone number for the supplier with the id 11. Should be (010) 9984510***
@@ -58,7 +62,9 @@ Reimport the Northwind database into PostgreSQL using pgAdmin. This is the same 
   * This can be done with SELECT and WHERE clauses
   </details>
 
-```SQL
+```SQLSELECT phone
+FROM suppliers
+Where supplier_id = '11'
 
 ```
 
@@ -68,7 +74,10 @@ Reimport the Northwind database into PostgreSQL using pgAdmin. This is the same 
 
   * This can be done with SELECT, WHERE, and ORDER BY clauses
   </details>
-
+ SELECT ship_name, ship_address, order_date
+    FROM orders 
+    WHERE order_date IS NOT NULL
+    ORDER BY order_date DESC
 ```SQL
 
 ```
@@ -80,7 +89,9 @@ Reimport the Northwind database into PostgreSQL using pgAdmin. This is the same 
   * This can be done with SELECT and WHERE clauses
   * You can use `length(company_name)` to get the length of the name
   </details>
-
+SELECT company_name
+FROM suppliers
+WHERE length(company_name) >20
 ```SQL
 
 ```
