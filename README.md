@@ -106,6 +106,8 @@ WHERE length(company_name) >20
   </details>
 
 ```SQL
+ELECT contact_title
+FROM customers WHERE upper(contact_title) LIKE '%MARKET%';
 
 ```
 
